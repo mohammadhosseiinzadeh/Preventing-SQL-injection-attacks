@@ -22,7 +22,9 @@ try {
     // $sql = "INSERT INTO `customers` (`CustomerName`, `Address`, `City`, `PostalCode`, `Country`) VALUES ('$name', '$address', '$city', '$postalCode', '$country')";
     // $connection->exec($sql);
 
-    $sql = "INSERT INTO `customers` (`CustomerName`, `Address`, `City`, `PostalCode`, `Country`) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO `customers` 
+    (`CustomerName`, `Address`, `City`, `PostalCode`, `Country`) 
+    VALUES (?, ?, ?, ?, ?)";
     $stmt = $connection->prepare($sql);
     $stmt->execute([$name, $address, $city, $postalCode, $country]);
 
